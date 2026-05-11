@@ -48,6 +48,25 @@ body {
 }
 
 /* ==========================================
+   FIX EMOJIS EN MÓVIL (Evitar emojis negros)
+   ========================================== */
+.caja-item-emoji,
+.resultado-emoji,
+.llave-icono-caja-emoji,
+.llave-icono-llave-emoji,
+.quiz-header-emoji,
+.quiz-pregunta-icon,
+.quiz-resultado-emoji,
+.spin-icon,
+.llave-metodo-icono,
+.llave-rechazado-icono,
+.llave-codigo-icono {
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", emoji !important;
+    -webkit-text-fill-color: initial !important;
+    color: initial !important;
+}
+
+/* ==========================================
    PARTÍCULAS DE FONDO
    ========================================== */
 #particles-container {
@@ -1825,9 +1844,9 @@ body {
     90%      { transform: translateX(3px)  rotateZ(0.5deg); }
 }
 
-/* --- Lid vuela hacia arriba --- */
+/* --- Lid vuela hacia arriba (Animación simplificada para mejor soporte móvil) --- */
 .case-3d-scene.case-opening .case-lid {
-    transform: translateY(-240%) rotateX(70deg);
+    transform: translateY(-150%) scale(1.1);
     opacity: 0;
 }
 
