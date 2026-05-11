@@ -28,7 +28,8 @@
                 <span class="title-name">David Castro</span>
             </h1>
             <p class="hero-subtitle animate-fade-up-delay">Se nos casa el <strong>13 de Junio de 2026</strong> con
-                <strong>Lorena</strong> 💍</p>
+                <strong>Lorena</strong> 💍
+            </p>
 
             <!-- Cuenta atrás -->
             <div class="countdown animate-fade-up-delay2" id="countdown">
@@ -233,7 +234,8 @@
                     <span class="llave-icono-llave-emoji">🔑</span>
                 </div>
                 <h3 class="llave-titulo">Se necesita una llave</h3>
-                <p class="llave-subtitulo">Esta caja está cerrada. Consigue una llave para abrirla y conocer tu reto.</p>
+                <p class="llave-subtitulo">Esta caja está cerrada. Consigue una llave para abrirla y conocer tu reto.
+                </p>
                 <div class="llave-precio-badge">💰 Precio de la llave: <strong>2,49 €</strong></div>
             </div>
 
@@ -283,7 +285,8 @@
                 </button>
 
                 <!-- ⭐ Tarjeta regalo del novio (REAL) ⭐ -->
-                <button class="llave-metodo llave-metodo-regalo" id="btn-pago-regalo" onclick="seleccionarPago('regalo')">
+                <button class="llave-metodo llave-metodo-regalo" id="btn-pago-regalo"
+                    onclick="seleccionarPago('regalo')">
                     <span class="llave-metodo-icono">🎁</span>
                     <div class="llave-metodo-info">
                         <span class="llave-metodo-nombre">Tarjeta regalo del novio</span>
@@ -302,15 +305,9 @@
                     <p>Introduce el código secreto que te han dado:</p>
                 </div>
                 <div class="llave-codigo-input-wrapper">
-                    <input
-                        type="text"
-                        id="llave-codigo-input"
-                        class="llave-codigo-input"
-                        placeholder="Escribe el código aquí"
-                        maxlength="30"
-                        onkeydown="if(event.key==='Enter') verificarCodigo()"
-                        autocomplete="off"
-                    >
+                    <input type="text" id="llave-codigo-input" class="llave-codigo-input"
+                        placeholder="Escribe el código aquí" maxlength="30"
+                        onkeydown="if(event.key==='Enter') verificarCodigo()" autocomplete="off">
                     <button class="llave-codigo-btn" onclick="verificarCodigo()">
                         ✓ Canjear
                     </button>
