@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despedida de Soltero - David Castro 🎉</title>
+    <meta name="description" content="La despedida de soltero de David Castro. ¡Gira la ruleta y acepta el reto!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- ===== PARTÍCULAS DE FONDO ===== -->
+    <div id="particles-container"></div>
+
+    <!-- ===== HERO / CABECERA ===== -->
+    <header id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-pretitle animate-fade-down">🍻 ¡Última noche de libertad! 🍻</p>
+            <h1 class="hero-title animate-fade-up">
+                <span class="title-line">Despedida de Soltero</span>
+                <span class="title-name">David Castro</span>
+            </h1>
+            <p class="hero-subtitle animate-fade-up-delay">Se nos casa el <strong>13 de Junio de 2026</strong> con
+                <strong>Lorena</strong> 💍</p>
+
+            <!-- Cuenta atrás -->
+            <div class="countdown animate-fade-up-delay2" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="countdown-days">00</span>
+                    <span class="countdown-label">Días</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="countdown-hours">00</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="countdown-minutes">00</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="countdown-seconds">00</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+
+            <a href="#ruleta-section" class="cta-button animate-fade-up-delay3" id="cta-start">
+                🎲 ¡Abrir Caja!
+            </a>
+        </div>
+
+        <!-- Flechita scroll -->
+        <div class="scroll-indicator animate-bounce">
+            <span>▼</span>
+        </div>
+    </header>
+
+    <!-- ===== MENSAJE PARA DAVID ===== -->
+    <section id="mensaje-section" class="section">
+        <div class="container">
+            <h2 class="section-title">📜 Querido David...</h2>
+            <div class="mensaje-card" id="mensaje-card">
+                <!-- 
+                    ========================================
+                    MENSAJE PARA DAVID
+                    Edita el texto dentro de este div para
+                    personalizar el mensaje que leerá David.
+                    ========================================
+                -->
+                <p class="mensaje-intro">¡Enhorabuena crack! 🥳</p>
+                <p>
+                    Has llegado hasta aquí, al punto de no retorno. Después de años aguantándote
+                    (y aguantándonos), por fin alguien ha decidido ficharte de por vida: <strong>Lorena</strong>.
+                    Y nosotros, como buenos amigos que somos, no podíamos dejar pasar esta ocasión
+                    sin montarte la que se merece. 💥
+                </p>
+                <p>
+                    Pero esto no es una despedida cualquiera... Aquí hay <strong>RETOS</strong>.
+                    Sí, David, retos. Y no te vas a librar de ninguno. La ruleta decide,
+                    tú obedeces. Así de simple. 😈
+                </p>
+                <p>
+                    Así que prepárate, porque esta noche vas a vivir cosas que
+                    <em>ojalá pudieras olvidar</em>... pero que nosotros nos encargaremos
+                    de recordarte <strong>SIEMPRE</strong>. 📸
+                </p>
+                <p class="mensaje-firma">— Tu familia, los que te queremos de verdad 🍺</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN CAJA CS:GO ===== -->
+    <section id="ruleta-section" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">🎁 La Caja de los Retos</h2>
+            <p class="section-subtitle">Abre la caja y acepta tu destino, David. No hay escapatoria.</p>
+
+            <!-- ===== VISUALIZACIÓN CAJA CS:GO ===== -->
+            <div id="csgo-case-display" class="csgo-case-display">
+
+                <!-- Halo de fondo pulsante -->
+                <div class="case-halo" id="case-halo"></div>
+
+                <!-- Columna de luz interior (visible al abrir) -->
+                <div class="case-light-beam" id="case-light-beam"></div>
+
+                <!-- Rayos radiales (visibles al abrir) -->
+                <div class="case-rays" id="case-rays">
+                    <span class="case-ray" style="--a:0deg"></span>
+                    <span class="case-ray" style="--a:40deg"></span>
+                    <span class="case-ray" style="--a:80deg"></span>
+                    <span class="case-ray" style="--a:120deg"></span>
+                    <span class="case-ray" style="--a:160deg"></span>
+                    <span class="case-ray" style="--a:200deg"></span>
+                    <span class="case-ray" style="--a:240deg"></span>
+                    <span class="case-ray" style="--a:280deg"></span>
+                    <span class="case-ray" style="--a:320deg"></span>
+                </div>
+
+                <!-- Escena 3D: tapa + cuerpo de la caja -->
+                <div class="case-3d-scene" id="case-3d-scene">
+                    <!-- Tapa (clip superior) -->
+                    <div class="case-lid" id="case-lid">
+                        <img src="csgo_case.png" alt="Caja CS:GO" class="case-src-img">
+                    </div>
+                    <!-- Cuerpo (clip inferior) -->
+                    <div class="case-body" id="case-body">
+                        <img src="csgo_case.png" alt="Caja CS:GO" class="case-src-img">
+                    </div>
+                </div>
+
+                <!-- Flash blanco de apertura -->
+                <div class="case-flash" id="case-flash"></div>
+
+                <!-- Instrucción -->
+                <p class="case-instruction" id="case-instruction">
+                    🔑 Pulsa el botón y consigue una llave para abrir la caja
+                </p>
+            </div>
+            <!-- /csgo-case-display -->
+
+            <div class="caja-wrapper">
+
+                <!-- Indicadores triangulares superiores e inferiores (estilo CS:GO) -->
+                <div class="caja-indicador-top"></div>
+                <div class="caja-indicador-bottom"></div>
+
+                <!-- Línea central de referencia -->
+                <div class="caja-linea-central"></div>
+
+                <!-- Ventana de la tira (overflow oculto) -->
+                <div class="caja-ventana" id="caja-ventana">
+                    <!-- La tira de retos se genera dinámicamente desde script.js -->
+                    <div class="caja-tira" id="caja-tira"></div>
+                </div>
+
+                <!-- Botón abrir caja -->
+                <button class="spin-button" id="spin-button" onclick="girarRuleta()">
+                    <span class="spin-icon">🎲</span>
+                    <span class="spin-text">¡ABRIR CAJA!</span>
+                </button>
+
+                <!-- Contador de retos restantes -->
+                <p class="caja-retos-restantes" id="caja-retos-restantes"></p>
+
+                <!-- Botón reiniciar (oculto por defecto, aparece cuando hay retos usados) -->
+                <button class="reset-button" id="reset-button" onclick="reiniciarRuleta()" style="display: none;">
+                    🔄 Reiniciar caja
+                </button>
+            </div>
+
+            <!-- Resultado del reto -->
+            <div class="resultado-container" id="resultado-container">
+                <div class="resultado-card" id="resultado-card">
+                    <p class="resultado-emoji" id="resultado-emoji">🎯</p>
+                    <h3 class="resultado-titulo" id="resultado-titulo">¡Tu reto es...!</h3>
+                    <p class="resultado-texto" id="resultado-texto"></p>
+                    <button class="resultado-close" id="resultado-close" onclick="cerrarResultado()">¡Entendido!
+                        💪</button>
+                </div>
+            </div>
+
+            <!-- Historial de retos -->
+            <div class="historial" id="historial">
+                <h3 class="historial-titulo">📋 Retos completados</h3>
+                <ul class="historial-lista" id="historial-lista">
+                    <!-- Se llena dinámicamente -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="footer">
+        <p>Hecho con 🍺 y mucho cariño para David Castro</p>
+        <p class="footer-small">Boda: 13 de Junio de 2026 · David & Lorena 💍</p>
+    </footer>
+
+    <!-- ===== QUIZ DE CULTURA GENERAL ===== -->
+    <div class="quiz-container" id="quiz-container">
+        <div class="quiz-card">
+            <div class="quiz-header">
+                <span class="quiz-header-emoji">🧠</span>
+                <h3 class="quiz-header-titulo">Quiz de Cultura General</h3>
+                <p class="quiz-header-sub">Responde las 5 preguntas sobre España. ¡Si suspendes, CHUPITO! 🥃</p>
+            </div>
+            <div class="quiz-preguntas" id="quiz-preguntas">
+                <!-- Se llena dinámicamente -->
+            </div>
+            <div class="quiz-resultado" id="quiz-resultado">
+                <!-- Se llena dinámicamente al terminar -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MODAL LLAVE / SISTEMA DE PAGO (estilo CS:GO) ===== -->
+    <div class="llave-overlay" id="llave-overlay">
+        <div class="llave-modal" id="llave-modal">
+
+            <!-- Botón cerrar -->
+            <button class="llave-cerrar" id="llave-cerrar" onclick="cerrarModalLlave()">✕</button>
+
+            <!-- Cabecera del modal -->
+            <div class="llave-header">
+                <div class="llave-icono-caja">
+                    <span class="llave-icono-caja-emoji">🎁</span>
+                    <span class="llave-icono-llave-emoji">🔑</span>
+                </div>
+                <h3 class="llave-titulo">Se necesita una llave</h3>
+                <p class="llave-subtitulo">Esta caja está cerrada. Consigue una llave para abrirla y conocer tu reto.</p>
+                <div class="llave-precio-badge">💰 Precio de la llave: <strong>2,49 €</strong></div>
+            </div>
+
+            <!-- Panel principal: métodos de pago -->
+            <div class="llave-metodos" id="llave-metodos">
+
+                <p class="llave-metodos-titulo">Elige método de pago:</p>
+
+                <!-- Tarjeta bancaria (falso) -->
+                <button class="llave-metodo" id="btn-pago-tarjeta" onclick="seleccionarPago('tarjeta')">
+                    <span class="llave-metodo-icono">💳</span>
+                    <div class="llave-metodo-info">
+                        <span class="llave-metodo-nombre">Tarjeta bancaria</span>
+                        <span class="llave-metodo-desc">Visa / Mastercard / AMEX</span>
+                    </div>
+                    <span class="llave-metodo-precio">2,49 €</span>
+                </button>
+
+                <!-- Bizum (falso) -->
+                <button class="llave-metodo" id="btn-pago-bizum" onclick="seleccionarPago('bizum')">
+                    <span class="llave-metodo-icono">📱</span>
+                    <div class="llave-metodo-info">
+                        <span class="llave-metodo-nombre">Bizum</span>
+                        <span class="llave-metodo-desc">Pago instantáneo</span>
+                    </div>
+                    <span class="llave-metodo-precio">2,49 €</span>
+                </button>
+
+                <!-- PayPal (falso) -->
+                <button class="llave-metodo" id="btn-pago-paypal" onclick="seleccionarPago('paypal')">
+                    <span class="llave-metodo-icono">🅿️</span>
+                    <div class="llave-metodo-info">
+                        <span class="llave-metodo-nombre">PayPal</span>
+                        <span class="llave-metodo-desc">Paga con tu cuenta PayPal</span>
+                    </div>
+                    <span class="llave-metodo-precio">2,49 €</span>
+                </button>
+
+                <!-- Crypto (falso) -->
+                <button class="llave-metodo" id="btn-pago-crypto" onclick="seleccionarPago('crypto')">
+                    <span class="llave-metodo-icono">₿</span>
+                    <div class="llave-metodo-info">
+                        <span class="llave-metodo-nombre">Criptomonedas</span>
+                        <span class="llave-metodo-desc">Bitcoin, Ethereum, Solana...</span>
+                    </div>
+                    <span class="llave-metodo-precio">2,49 €</span>
+                </button>
+
+                <!-- ⭐ Tarjeta regalo del novio (REAL) ⭐ -->
+                <button class="llave-metodo llave-metodo-regalo" id="btn-pago-regalo" onclick="seleccionarPago('regalo')">
+                    <span class="llave-metodo-icono">🎁</span>
+                    <div class="llave-metodo-info">
+                        <span class="llave-metodo-nombre">Tarjeta regalo del novio</span>
+                        <span class="llave-metodo-desc">Canjea tu código secreto</span>
+                    </div>
+                    <span class="llave-regalo-badge">¡GRATIS!</span>
+                </button>
+
+            </div><!-- /llave-metodos -->
+
+            <!-- Panel: introducir código (tarjeta regalo) -->
+            <div class="llave-codigo-panel" id="llave-codigo-panel">
+                <div class="llave-codigo-header">
+                    <span class="llave-codigo-icono">🎁</span>
+                    <h4>Tarjeta regalo del novio</h4>
+                    <p>Introduce el código secreto que te han dado:</p>
+                </div>
+                <div class="llave-codigo-input-wrapper">
+                    <input
+                        type="text"
+                        id="llave-codigo-input"
+                        class="llave-codigo-input"
+                        placeholder="Escribe el código aquí"
+                        maxlength="30"
+                        onkeydown="if(event.key==='Enter') verificarCodigo()"
+                        autocomplete="off"
+                    >
+                    <button class="llave-codigo-btn" onclick="verificarCodigo()">
+                        ✓ Canjear
+                    </button>
+                </div>
+                <p class="llave-codigo-error" id="llave-codigo-error"></p>
+                <button class="llave-volver-btn" onclick="mostrarMetodosLlave()">← Volver</button>
+            </div><!-- /llave-codigo-panel -->
+
+            <!-- Panel: procesando pago falso -->
+            <div class="llave-procesando" id="llave-procesando">
+                <div class="llave-spinner"></div>
+                <p class="llave-procesando-texto" id="llave-procesando-texto">Conectando con el banco...</p>
+            </div><!-- /llave-procesando -->
+
+            <!-- Panel: pago rechazado (resultado métodos falsos) -->
+            <div class="llave-rechazado" id="llave-rechazado">
+                <div class="llave-rechazado-icono">❌</div>
+                <h4 class="llave-rechazado-titulo">Pago rechazado</h4>
+                <p class="llave-rechazado-msg" id="llave-rechazado-msg"></p>
+                <button class="llave-volver-btn" onclick="mostrarMetodosLlave()">
+                    Intentar con otro método
+                </button>
+            </div><!-- /llave-rechazado -->
+
+        </div><!-- /llave-modal -->
+    </div><!-- /llave-overlay -->
+
+    <!-- ===== CONFETTI CANVAS ===== -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- ===== BOTÓN MUTE (esquina inferior derecha) ===== -->
+    <button class="mute-btn" id="mute-btn" onclick="toggleMute()" title="Sonido on/off">
+        <span id="mute-icon">🔊</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
