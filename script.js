@@ -374,11 +374,13 @@ function cargarEstado() {
 }
 
 // Borra todo el estado guardado
-function borrarEstado() {
+function borrarEstado(resetLlaves = false) {
     localStorage.removeItem(LS_HISTORIAL);
     localStorage.removeItem(LS_USADOS);
-    // Nota: las llaves usadas NO se borran al reiniciar la caja,
-    // ya que cada llave es de un solo uso.
+    // Si se pide, también borrar las llaves usadas
+    if (resetLlaves) {
+        localStorage.removeItem(LS_LLAVES_USADAS);
+    }
 }
 
 
@@ -840,9 +842,17 @@ function actualizarHistorial() {
 function reiniciarRuleta() {
     if (!confirm('¿Seguro que quieres reiniciar la caja y borrar el historial? 🔄')) return;
 
+    // Preguntar también si se quieren resetear las llaves
+    const resetLlaves = confirm('¿Resetear también los códigos de llave? (Si dices NO, los códigos ya usados seguirán sin funcionar) 🔑');
+
     historialRetos = [];
     retosUsados = [];
-    borrarEstado();
+    borrarEstado(resetLlaves);
+
+    if (resetLlaves) {
+        llavesUsadas = [];
+    }
+
     actualizarHistorial();
     actualizarRetosRestantes();
 
@@ -857,6 +867,9 @@ function reiniciarRuleta() {
     const spinBtn = document.getElementById('spin-button');
     spinBtn.disabled = false;
     spinBtn.title = '';
+
+    // Resetear también la caja visual
+    resetCajaDisplay();
 }
 
 
