@@ -424,7 +424,7 @@ function construirTira(retosActivos, winnerRetoIdx, totalItems, winnerPos) {
         if (textoCorto.length > 55) textoCorto = textoCorto.substring(0, 53) + '…';
 
         div.innerHTML = `
-            <span class="caja-item-emoji">${reto.emoji}</span>
+            <span class="caja-item-emoji">${reto.emoji}\uFE0F</span>
             <span class="caja-item-texto">${textoCorto}</span>
         `;
         tira.appendChild(div);
@@ -686,7 +686,7 @@ function iniciarAperturaCaja() {
 // ============================================================
 // Ahora recibe el objeto reto directamente (con ._idx = índice original en RETOS)
 function mostrarResultado(reto) {
-    document.getElementById('resultado-emoji').textContent = reto.emoji;
+    document.getElementById('resultado-emoji').textContent = reto.emoji + '\uFE0F';
     document.getElementById('resultado-texto').textContent = reto.texto;
     document.getElementById('resultado-container').classList.add('visible');
 
